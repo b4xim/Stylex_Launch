@@ -5,12 +5,7 @@ import {
   Clock,
   PhoneCall,
   MessageCircle,
-  Compass,
-  Car,
-  Coffee,
-  ShieldCheck,
-  Sparkles,
-  HeartHandshake
+  Compass
 } from 'lucide-react';
 import { SALON_DATA } from '../data/salonData.ts';
 import { StyleXLogo } from './StyleXLogo.tsx';
@@ -19,41 +14,16 @@ import { ScreenView } from '../types.ts';
 interface LocationScreenProps {
   onBack: () => void;
   onNavigate: (view: ScreenView) => void;
-  onOpenBooking: () => void;
 }
 
 export const LocationScreen: React.FC<LocationScreenProps> = ({
   onBack,
-  onNavigate,
-  onOpenBooking
+  onNavigate
 }) => {
   const whatsappLink = `https://wa.me/${SALON_DATA.whatsappNumber}?text=Hello%20StyleX%20Signature%20Salon%20Tirur,%20I%20am%20heading%20over%20and%20need%20assistance%20with%20directions/parking.`;
 
-  const amenities = [
-    {
-      icon: <Car className="w-5 h-5 text-[#fe753c]" />,
-      title: 'Hassle-Free Parking',
-      desc: 'Dedicated parking right at One Arcade for our salon patrons.'
-    },
-    {
-      icon: <Sparkles className="w-5 h-5 text-[#fe753c]" />,
-      title: 'Private VIP Suites',
-      desc: 'Exclusive, discreet suites for bridal prep, hijab styling, & premium treatments.'
-    },
-    {
-      icon: <Coffee className="w-5 h-5 text-[#fe753c]" />,
-      title: 'Complimentary Brew Bar',
-      desc: 'Freshly roasted artisan coffee, organic chamomile tea, & infused waters.'
-    },
-    {
-      icon: <ShieldCheck className="w-5 h-5 text-[#fe753c]" />,
-      title: 'Authentic Global Products',
-      desc: 'Authorized partner for Olaplex, L’Oréal Professionnel, & Dermalogica.'
-    }
-  ];
-
   return (
-    <div className="relative min-h-screen w-full bg-[#021811] text-[#fbf9f5] flex flex-col selection:bg-[#fe753c] selection:text-white pb-24">
+    <div className="relative min-h-screen w-full bg-[#021811] text-[#fbf9f5] flex flex-col selection:bg-[#fe753c] selection:text-white pb-10 sm:pb-24">
       {/* Background glow */}
       <div className="pointer-events-none absolute inset-0 bg-radial-sanctuary opacity-90" />
       <div className="pointer-events-none absolute top-10 left-10 w-[500px] h-[500px] bg-[#0d4c3c]/20 rounded-full blur-[140px]" />
@@ -74,14 +44,14 @@ export const LocationScreen: React.FC<LocationScreenProps> = ({
               onClick={() => onNavigate('launch')}
               className="cursor-pointer hidden sm:block"
             >
-              <StyleXLogo size="sm" showText={true} />
+              <StyleXLogo size="sm" />
             </div>
           </div>
 
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#05281e] border border-[#144e3d] text-xs font-semibold text-[#a6d0be]">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Open Daily: 9:00 AM – 11:30 PM</span>
+              <span>Open Daily: 10:00 AM – 1:00 AM</span>
             </div>
           </div>
         </div>
@@ -100,7 +70,7 @@ export const LocationScreen: React.FC<LocationScreenProps> = ({
           </h1>
 
           <p className="font-sans text-sm sm:text-base text-[#c1c8c3] leading-relaxed">
-            Conveniently situated at One Arcade on KG Padi Road. Walk-ins and pre-booked private appointments are warmly welcomed daily until 11:30 PM.
+            Conveniently situated at One Arcade on KG Padi Road. Walk-ins and pre-booked private appointments are warmly welcomed daily until 1:00 AM.
           </p>
         </div>
 
@@ -135,7 +105,7 @@ export const LocationScreen: React.FC<LocationScreenProps> = ({
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-bold text-white">9:00 AM – 11:30 PM</span>
+                      <span className="text-sm font-bold text-white">10:00 AM – 1:00 AM</span>
                       <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                         Open Now
                       </span>
@@ -186,7 +156,7 @@ export const LocationScreen: React.FC<LocationScreenProps> = ({
                   <MapPin className="w-5 h-5" />
                 </div>
                 <h3 className="font-serif text-xl font-bold text-white mb-2">
-                  Prime Town Center Location
+                  StyleX Signature Salon
                 </h3>
                 <p className="text-xs sm:text-sm text-[#c1c8c3] leading-relaxed mb-4">
                   Positioned directly at One Arcade near Lenskart on KG Padi Road, easily accessible from Tirur Railway Station (3 minutes drive) and Town Bus Stand.
@@ -209,49 +179,33 @@ export const LocationScreen: React.FC<LocationScreenProps> = ({
               </div>
             </div>
 
-            {/* Quick Reservation Card */}
+            {/* Direct Contact Card */}
             <div className="bg-[#05261d]/80 border border-[#175240] rounded-2xl p-5 text-center">
               <p className="text-xs text-[#a6d0be] mb-3">
-                Planning a special visit or bridal styling session?
+                Have questions or planning your visit to the salon?
               </p>
-              <button
-                onClick={onOpenBooking}
-                className="w-full py-2.5 rounded-xl bg-[#fe753c] hover:bg-[#e8652d] text-white text-xs sm:text-sm font-bold transition shadow-sm cursor-pointer"
-              >
-                Reserve Flagship Appointment
-              </button>
+              <div className="flex flex-col sm:flex-row gap-2.5">
+                <a
+                  href={`tel:${SALON_DATA.phoneNumberClean}`}
+                  className="flex-1 py-2.5 rounded-xl bg-[#042018] hover:bg-[#0a382b] text-white border border-[#175240] text-xs font-semibold flex items-center justify-center gap-2 transition cursor-pointer"
+                >
+                  <PhoneCall className="w-3.5 h-3.5 text-[#a6d0be]" />
+                  <span>Call Desk</span>
+                </a>
+                <a
+                  href={`https://wa.me/${SALON_DATA.whatsappNumber}?text=${encodeURIComponent('Hello StyleX Tirur Flagship, I would like to inquire about appointments and availability.')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-2.5 rounded-xl bg-[#fe753c] hover:bg-[#e8652d] text-white text-xs font-bold flex items-center justify-center gap-2 transition shadow-sm cursor-pointer"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* AMENITIES SECTION */}
-        <div className="mt-12">
-          <div className="text-center mb-6">
-            <span className="text-[10px] font-bold tracking-[0.2em] text-[#fe753c] uppercase block mb-1">
-              THE BESPOKE EXPERIENCE
-            </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-white">
-              Flagship Sanctuary Amenities
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {amenities.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-5 rounded-2xl bg-radial-card border border-[#144e3d] text-left hover:border-[#1e6d56] transition-colors"
-              >
-                <div className="mb-3">{item.icon}</div>
-                <h3 className="font-sans text-sm font-bold text-white mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-[#a6d0be] leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
       </main>
     </div>
   );

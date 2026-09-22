@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Bodoni Moda", Georgia, serif;
+  --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   --color-emerald-abyss: #01140e;
   --color-emerald-deep: #021d15;
@@ -15,7 +15,7 @@
 
 /* Explicit font utility guarantees */
 .font-serif {
-  font-family: "Bodoni Moda", Georgia, serif;
+  font-family: "Playfair Display", Georgia, serif;
 }
 .font-sans {
   font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;

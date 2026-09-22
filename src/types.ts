@@ -1,4 +1,4 @@
-export type ScreenView = 'launch' | 'menu' | 'appointment' | 'location';
+export type ScreenView = 'launch' | 'location';
 
 export interface ServiceItem {
   id: string;

@@ -12,7 +12,7 @@ export const SALON_DATA: SalonDetails = {
   landmark: 'Near Lenskart, KG Padi Road',
   city: 'Tirur, Malappuram, Kerala',
   pincode: '676101',
-  hours: 'Open Daily: 9:00 AM – 11:30 PM',
+  hours: 'Open Daily: 10:00 AM – 1:00 AM',
   hoursDetail: 'Monday through Sunday without break',
   instagramHandle: '@stylex.signature.salon.tirur',
   instagramUrl: 'https://www.instagram.com/stylex.signature.salon.tirur/',
