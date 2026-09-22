@@ -1,0 +1,6 @@
+{
+  "name": "StyleX Signature Salon Tirur",
+  "description": "Luxury hair, skin, bridal, and groom sanctuary in Tirur. Official launch portal, bespoke appointment desk, and flagship treatment menu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Bodoni Moda", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --color-emerald-abyss: #01140e;
+  --color-emerald-deep: #021d15;
+  --color-emerald-surface: #062b20;
+  --color-emerald-card: #0a382b;
+  --color-emerald-border: #144e3d;
+  --color-terracotta: #fe753c;
+  --color-terracotta-dark: #e8652d;
+  --color-amber-gold: #ffb703;
+}
+
+/* Explicit font utility guarantees */
+.font-serif {
+  font-family: "Bodoni Moda", Georgia, serif;
+}
+.font-sans {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+/* Custom background ambient aura */
+.bg-radial-sanctuary {
+  background: radial-gradient(circle at 50% 15%, #0d4637 0%, #05241b 45%, #02140e 100%);
+}
+
+.bg-radial-card {
+  background: radial-gradient(130% 100% at 50% 0%, #0d3e31 0%, #07271f 100%);
+}
+
+/* Custom subtle glass effect without over-blurring */
+.glass-panel {
+  background: rgba(10, 56, 43, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #02140e;
+}
+::-webkit-scrollbar-thumb {
+  background: #144e3d;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1e6d56;
+}
